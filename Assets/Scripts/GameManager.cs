@@ -1,10 +1,9 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
-
 
 {
     public static GameManager Instance;
@@ -33,11 +32,15 @@ public class GameManager : MonoBehaviour
         collectedCubes++; // Aumenta el contador de recogidos
         remainingCubes--; // Reduce los cubos restantes
 
-        UpdateUI(); // Actualiza el texto en pantalla
-
         if (remainingCubes <= 0)
         {
-            Debug.Log("�Has ganado! Todos los cubos han sido recogidos.");
+            // Mostrar mensaje de victoria
+            cubeCounterText.text = "¡Has ganado! Enhorabuena";
+            Debug.Log("¡Has ganado! Enhorabuena");
+        }
+        else
+        {
+            UpdateUI(); // Actualiza el texto en pantalla si aún quedan cubos
         }
     }
 
