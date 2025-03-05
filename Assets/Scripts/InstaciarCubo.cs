@@ -1,12 +1,8 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 
-public class InstaciarCubo : MonoBehaviour
-
+public class InstanciarCubo : MonoBehaviour
 {
-    public GameObject cuboPrefab; // Prefab del cubo (opcional)
     private GameObject cuboInstanciado; // Referencia al cubo instanciado
 
     public Vector3 posicionA = new Vector3(0, 1, 0); // Posición inicial
@@ -30,15 +26,8 @@ public class InstaciarCubo : MonoBehaviour
 
     void InstanciarCubo1()
     {
-        if (cuboPrefab != null)
-        {
-            cuboInstanciado = Instantiate(cuboPrefab, posicionA, Quaternion.identity);
-        }
-        else
-        {
-            cuboInstanciado = GameObject.CreatePrimitive(PrimitiveType.Cube);
-            cuboInstanciado.transform.position = posicionA; // Coloca el cubo en la posición inicial
-        }
+        cuboInstanciado = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        cuboInstanciado.transform.position = posicionA; // Coloca el cubo en la posición inicial
     }
 
     IEnumerator MoverCubo(Vector3 inicio, Vector3 fin, float duracion)
@@ -115,14 +104,6 @@ public class InstaciarCubo : MonoBehaviour
         cuboInstanciado.transform.rotation = rotacionFinal; // Asegura la rotación inicial
     }
 }
-
-
-
-
-
-
-
-
 
 
 
